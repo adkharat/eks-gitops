@@ -1,0 +1,18 @@
+database:
+  rds_endpoint: database-12.ct62ugc84t0z.us-east-1.rds.amazonaws.com
+  port: 3306
+  databaseName: company
+  base64_username: cm9vdA== 
+  base64_password: cXdlcnR5dWk=
+
+route53:
+  domain_name: advancek8straining.online
+  domain_name_https:  https://advancek8straining.online
+
+certificate:
+  arn: arn:aws:acm:us-east-1:851725651259:certificate/9ce46d7d-5ac0-4b5d-894b-14b145a472b3
+
+images:
+  frontend: adkharat/react-currency-exchange-app-fe
+  backenf_1: adkharat/first_spring_boot_to_rds_1
+  backend_2: adkharat/second_spring_boot_to_rds_1
