@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: currency-exchange-container
-        image: {{ .Values.images.frontend }}:8
+        image: {{ .Values.images.frontend }}:9
         env:
             - name: REACT_APP_PUBLIC_URL
               value: {{ .Values.route53.domain_name_https }}
