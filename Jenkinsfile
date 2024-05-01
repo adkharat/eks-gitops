@@ -16,9 +16,14 @@ pipeline {
                         sh "pwd"
                         sh "ls -la"
                         echo "Before Update"
+                        
                         sh "cat ./templates/front_end_dep_service.yaml"
                         sh "sed -i 's+{{ .Values.images.frontend }}.*+{{ .Values.images.frontend }}:${DOCKERTAG}+g' ./templates/front_end_dep_service.yaml"
+                        sh "sed -i 's+{{ .Values.images.backenf_1 }}.*+{{ .Values.images.backenf_1 }}:${DOCKERTAG}+g' ./templates/backend_deployment_service.yaml"
+                        sh "sed -i 's+{{ .Values.images.backenf_2 }}.*+{{ .Values.images.backenf_2 }}:${DOCKERTAG}+g' ./templates/backend_deployment_service.yaml"                        
+                      
                         echo "After Update"
+                        
                         sh "cat ./templates/front_end_dep_service.yaml"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
