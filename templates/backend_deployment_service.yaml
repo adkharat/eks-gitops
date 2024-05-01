@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: first-deployment-eks-and-rds-container
-        image: {{ .Values.images.backenf_1 }}:latest  # Replace with the correct Docker Hub path
+        image: {{ .Values.images.backenf_1 }}:7
         env:
             - name: SPRING_DATASOURCE_URL
               value: jdbc:mysql://spring-mysql:{{ .Values.database.port }}/{{ .Values.database.databaseName }}?createDatabaseIfNotExist=true&characterEncoding=UTF-8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
