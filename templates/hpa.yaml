@@ -8,7 +8,7 @@ spec:
     kind: Deployment
     name: currency-exchange-apps
   minReplicas: 1
-  maxReplicas: 3
+  maxReplicas: 30
   metrics:
   - type: Resource
     resource:
@@ -28,7 +28,7 @@ spec:
     kind: Deployment
     name: first-deployment-eks-and-rds
   minReplicas: 1
-  maxReplicas: 3
+  maxReplicas: 30
   metrics:
   - type: Resource
     resource:
