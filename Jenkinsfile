@@ -20,11 +20,16 @@ pipeline {
                         sh "cat ./templates/front_end_dep_service.yaml"
                         sh "sed -i 's+{{ .Values.images.frontend }}.*+{{ .Values.images.frontend }}:${DOCKERTAG}+g' ./templates/front_end_dep_service.yaml"
                         sh "sed -i 's+{{ .Values.images.backenf_1 }}.*+{{ .Values.images.backenf_1 }}:${DOCKERTAG}+g' ./templates/backend_deployment_service.yaml"
-                        sh "sed -i 's+{{ .Values.images.backenf_2 }}.*+{{ .Values.images.backenf_2 }}:${DOCKERTAG}+g' ./templates/backend_deployment_service.yaml"                        
+                        sh "sed -i 's+{{ .Values.images.backend_2 }}.*+{{ .Values.images.backend_2 }}:${DOCKERTAG}+g' ./templates/backend_deployment_service.yaml"                        
                       
                         echo "After Update"
                         
+                        echo "front_end_dep_service"
                         sh "cat ./templates/front_end_dep_service.yaml"
+
+                        echo "backend_deployment_service"
+                        sh "cat ./templates/backend_deployment_service.yaml"
+
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
                         sh "GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=no -i ${key}' git push git@github.com:adkharat/eks-gitops.git HEAD:main"
