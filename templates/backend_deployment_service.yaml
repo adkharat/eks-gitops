@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: first-deployment-eks-and-rds-container
-        image: {{ .Values.images.backenf_1 }}:14
+        image: {{ .Values.images.backenf_1 }}:20
         env:
             - name: SPRING_DATASOURCE_URL
               value: jdbc:mysql://spring-mysql:{{ .Values.database.port }}/{{ .Values.database.databaseName }}?createDatabaseIfNotExist=true&characterEncoding=UTF-8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
@@ -62,7 +62,7 @@ spec:
     spec:
       containers:
       - name: second-deployment-eks-and-rds-container
-        image: {{ .Values.images.backend_2 }}:14
+        image: {{ .Values.images.backend_2 }}:20
         env:
             - name: SPRING_DATASOURCE_URL
               value: jdbc:mysql://spring-mysql:{{ .Values.database.port }}/{{ .Values.database.databaseName }}?createDatabaseIfNotExist=true&characterEncoding=UTF-8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
