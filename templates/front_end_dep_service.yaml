@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: currency-exchange-container
-        image: {{ .Values.images.frontend }}:10
+        image: {{ .Values.images.frontend }}:14
         env: # Drawback of REACT-JS, cannot read environment variable runtime
             - name: REACT_APP_PUBLIC_URL
               value: {{ .Values.route53.domain_name_https }}
