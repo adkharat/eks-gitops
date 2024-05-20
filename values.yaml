@@ -10,7 +10,7 @@ route53:
   domain_name_https:  https://advancek8straining.online
 
 certificate:
-  arn: arn:aws:acm:us-east-1:851725651259:certificate/9ce46d7d-5ac0-4b5d-894b-14b145a472b3
+  arn: arn:aws:acm:us-east-1:851725651259:certificate/5bfd3492-e654-4cfc-95e0-62751abfbd94
 
 images:
   frontend: adkharat/react-currency-exchange-app-fe
